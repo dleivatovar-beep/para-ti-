@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- 🎵 Música -->
+<audio id="musica" src="musica.mp3"></audio>
+
+<!-- 🌑 PANTALLA 1 -->
+<div id="pantalla1" class="pantalla activa">
+    <div class="texto">Toca para abrir</div>
+
+    <div class="heart-wrapper" onclick="abrir()">
+        <div class="heart"></div>
+    </div>
+</div>
+
+<!-- 🌹 PANTALLA 2 -->
+<div id="pantalla2" class="pantalla sanvalentin">
+    <h1 class="titulo-romantico">Feliz San Valentín</h1>
+
+    <img src="corazon.png" class="corazon-centro">
+    <img src="rosa.png" class="rosa" onclick="abrirCarta()">
+
+    <p class="mensaje-romantico">Presiona la flor dulce..</p>
+</div>
+
+<!-- 💌 PANTALLA 3 -->
+<div id="pantalla3" class="pantalla carta">
+    <div class="carta-contenido">
+        <h1>Eres mi persona favorita ❤️</h1>
+        <p>
+            Desde que llegaste a mi vida todo es más bonito.
+            Tu sonrisa ilumina mis días,
+            y tu amor hace que mi corazón lata más fuerte.
+        </p>
+        <button onclick="cambiarPantalla('pantalla4')">Siguiente 💌</button>
+    </div>
+</div>
+
+<!-- 💌 PANTALLA 4 -->
+<div id="pantalla4" class="pantalla carta">
+    <div class="carta-contenido">
+        <h1>💖 Dulce 💖</h1>
+        <p>Gracias por existir ❤️</p>
+        <button onclick="cambiarPantalla('pantalla5')">Siguiente 💌</button>
+    </div>
+</div>
+
+<!-- 💌 PANTALLA 5 -->
+<div id="pantalla5" class="pantalla carta">
+    <div class="carta-contenido">
+        <h1>✨ Te quiero mucho ✨</h1>
+        <p>
+            Eres mi lugar seguro
+            y me haces feliz cada día.
+        </p>
+        <button onclick="cambiarPantalla('pantalla6')">Siguiente 💌</button>
+    </div>
+</div>
+
+<!-- 💌 PANTALLA 6 -->
+<div id="pantalla6" class="pantalla carta">
+    <div class="carta-contenido">
+        <h1>💞 Eres mi compañera de vida 💞</h1>
+        <p>Te quiero infinitamente ❤️</p>
+        <button onclick="mostrarFinal()">Final 💖</button>
+    </div>
+</div>
+
+<!-- 💖 PANTALLA FINAL -->
+<div id="pantallaFinal" class="pantalla final">
+    <div class="contenido-final">
+        <h1 id="mensajeFinal"></h1>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>

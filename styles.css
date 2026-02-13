@@ -1,0 +1,401 @@
+body{
+    margin:0;
+    height:100vh;
+    background: radial-gradient(circle at center, #200012, #000000);
+    overflow:hidden;
+    font-family: Arial, sans-serif;
+    color:white;
+    position:relative;
+}
+
+/* Fondo estrellas */
+body::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:url("https://www.transparenttextures.com/patterns/stardust.png");
+    animation: estrellas 60s linear infinite;
+    opacity:0.4;
+    z-index:0;
+}
+
+@keyframes estrellas{
+    from{transform:translateY(0);}
+    to{transform:translateY(-600px);}
+}
+
+/* Pantallas */
+.pantalla{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    opacity:0;
+    pointer-events:none;
+    transition: opacity 0.8s ease;
+    z-index:1;
+}
+
+.pantalla.activa{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* Texto */
+.texto{
+    font-size:32px;
+    margin-bottom:20px;
+    text-shadow:0 0 15px white;
+}
+
+/* ===== CORAZÓN PANTALLA 1 ===== */
+
+.heart-wrapper{
+    position:relative;
+    width:150px;
+    height:150px;
+    cursor:pointer;
+    animation: latido 1.8s infinite ease-in-out;
+}
+
+.heart{
+    width:120px;
+    height:120px;
+    background: radial-gradient(circle at 39% 30%, #ff4d6d, #ff004c);
+    position:absolute;
+    top:15px;
+    left:15px;
+    clip-path: path("M60 110 L20 70 A25 25 0 0 1 60 40 A25 25 0 0 1 100 70 Z");
+    box-shadow:
+        0 0 20px #ff004c,
+        0 0 40px #ff004c,
+        0 0 60px #ff4d6d;
+}
+
+/* Flecha */
+.arrow{
+    position:absolute;
+    width:160px;
+    height:6px;
+    background: linear-gradient(10deg,#ff004c,#ff99ac);
+    top:75px;
+    left:-1px;
+    transform: rotate(30deg);
+    box-shadow:0 0 15px #ff4d6d;
+}
+
+.arrow::after{
+    content:"";
+    position:absolute;
+    left:-12px;
+    top:-7px;
+    border-right:18px solid #ff004c;
+    border-top:12px solid transparent;
+    border-bottom:12px solid transparent;
+}
+
+/* Latido */
+@keyframes latido{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.12);}
+    100%{transform:scale(1);}
+}
+
+/* ============================= */
+/* 🌹 PANTALLA SAN VALENTÍN PC */
+/* ============================= */
+
+.sanvalentin-pc{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:25px;
+}
+
+/* Título arriba */
+.titulo-romantico{
+    font-size:65px;
+    margin-top:40px;
+    background: linear-gradient(90deg,#ff4d88,#ff99cc);
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:
+        0 0 25px rgba(255,0,90,0.8),
+        0 0 50px rgba(255,0,120,0.6);
+}
+
+/* ❤️ Corazón al centro */
+.corazon-centro{
+    width:220px;
+    filter: drop-shadow(0 0 30px #ff0066);
+    animation: latidoCentro 1.5s infinite ease-in-out;
+}
+
+@keyframes latidoCentro{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
+
+/* 🌹 Rosa abajo */
+.rosa{
+    width:140px;
+    filter:
+        drop-shadow(0 0 25px rgba(255,0,90,0.6))
+        drop-shadow(0 0 60px rgba(255,0,120,0.4));
+    animation: aparecerRosa 2s ease forwards;
+}
+
+@keyframes aparecerRosa{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Texto inferior */
+.mensaje-romantico{
+    font-size:22px;
+    letter-spacing:3px;
+    opacity:0.9;
+    text-shadow:0 0 15px rgba(255,255,255,0.6);
+}
+
+/* ===== PANTALLA 2 ===== */
+
+.sanvalentin-pc{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:25px;
+}
+
+/* ===== TITULO ===== */
+
+.titulo-romantico{
+    font-size:60px;
+    font-weight:300;
+    letter-spacing:4px;
+    color:#ff9acb;
+    text-shadow:
+        0 0 20px rgba(255,0,100,0.7),
+        0 0 40px rgba(255,0,120,0.5);
+}
+
+/* ===== CORAZÓN ===== */
+
+.corazon-centro{
+    width:280px;
+    animation: latidoCentro 1.8s infinite ease-in-out;
+}
+
+@keyframes latidoCentro{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
+
+/* ===== ROSA ===== */
+
+.rosa{
+    width:150px;
+    filter: drop-shadow(0 0 30px rgba(255,0,120,0.5));
+}
+
+/* ===== TEXTO INFERIOR ===== */
+
+.mensaje-romantico{
+    font-size:20px;
+    letter-spacing:3px;
+    color:#ffffffcc;
+}
+
+/* ===== FONDO PREMIUM OSCURO ===== */
+.carta-pantalla{
+    background: radial-gradient(circle at top, #3a001f, #12000a 70%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* ===== CARTA REALISTA ===== */
+.carta-contenido{
+    width: 420px;
+    max-width: 90%;
+    padding: 50px 40px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #ffe4ec, #ffc1d6);
+    text-align: center;
+    position: relative;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.6),
+        inset 0 2px 8px rgba(255,255,255,0.6);
+
+    animation: flotar 3s ease-in-out infinite alternate;
+}
+
+/* ===== EFECTO BRILLO SUPERIOR ===== */
+.carta-contenido::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:40%;
+    border-radius:20px 20px 0 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    pointer-events:none;
+}
+
+/* ===== TÍTULO ===== */
+.carta-contenido h1{
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #b30059;
+    letter-spacing: 1px;
+}
+
+/* ===== TEXTO ===== */
+.carta-contenido p{
+    font-size: 17px;
+    line-height: 1.8;
+    color: #5c0033;
+    margin-bottom: 35px;
+}
+
+/* ===== BOTÓN PREMIUM ===== */
+.carta-contenido button{
+    padding: 12px 35px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(to right, #ff2e88, #ff5ca8);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(255, 0, 120, 0.5);
+}
+
+.carta-contenido button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 0, 120, 0.7);
+}
+
+/* ===== ANIMACIÓN FLOTANTE SUAVE ===== */
+@keyframes flotar{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-10px);
+    }
+}
+
+/* ============================= */
+/* 📱 RESPONSIVE CELULAR */
+/* ============================= */
+
+@media (max-width: 768px){
+
+    .texto{
+        font-size: 6vw;
+    }
+
+    .heart-wrapper{
+        width: 35vw;
+        height: 35vw;
+    }
+
+    .heart{
+        width: 28vw;
+        height: 28vw;
+        top: 3.5vw;
+        left: 3.5vw;
+    }
+
+    .titulo-romantico{
+        font-size: 9vw;
+        letter-spacing: 2px;
+        margin-top: 20px;
+    }
+
+    .corazon-centro{
+        width: 55vw;
+    }
+
+    .rosa{
+        width: 35vw;
+    }
+
+    .mensaje-romantico{
+        font-size: 4vw;
+        letter-spacing: 2px;
+    }
+
+    .carta-contenido{
+        padding: 35px 25px;
+    }
+
+    .carta-contenido h1{
+        font-size: 6vw;
+    }
+
+    .carta-contenido p{
+        font-size: 4.2vw;
+    }
+
+}
+
+/* ============================= */
+/* 💖 PANTALLA FINAL */
+/* ============================= */
+
+.final{
+    background: radial-gradient(circle at center, #12000a, #000000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.contenido-final h1{
+    font-size: 45px;
+    max-width: 800px;
+    line-height: 1.5;
+    text-shadow: 0 0 20px rgba(255,0,120,0.7);
+}
+
+/* Cursor efecto máquina */
+.contenido-final h1::after{
+    content: "|";
+    animation: parpadeo 1s infinite;
+}
+
+@keyframes parpadeo{
+    0%{opacity:1;}
+    50%{opacity:0;}
+    100%{opacity:1;}
+}
+
+@media (max-width:768px){
+    .contenido-final h1{
+        font-size: 7vw;
+    }
+}
